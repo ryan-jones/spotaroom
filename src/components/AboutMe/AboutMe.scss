@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.about {
+  @include w-h(100%);
+  .title {
+    text-align: center;
+    font-size: 56px;
+  }
+  .profile {
+    @include flex-between();
+    background-color: $lightgrey;
+    min-height: 50vh;
+
+    &__content {
+      padding: $baseSpacing;
+      width: 70%;
+    }
+    &__image {
+      width: 30%;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9b/Construction_of_Sidra_Medical_and_Research_Center_in_2014.jpg');
+      background-size: cover;
+    }
+  }
+  .personal {
+    @include flex-between();
+    min-height: 50vh;
+    background-color: $white;
+    &__content {
+      padding: $baseSpacing;
+      width: 70%;
+    }
+    &__image {
+      width: 30%;
+      background-image: url('https://ifly-selections-axaxzmkc.netdna-ssl.com/10301486-klm-selections/content/image/_f_large/Japan-Osaka_Header_first-frame-1522228470.jpg');
+      background-size: cover;
+    }
+  }
+}

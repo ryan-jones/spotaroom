@@ -1,0 +1,75 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.filter {
+  @include w-h(20%, 100%);
+  @include flex-column();
+  justify-content: space-between;
+  background-color: $white;
+  border-radius: 5px;
+  padding: $baseSpacing;
+
+  @media only screen and (max-width: $until-tablet) {
+    @include flex-column();
+    @include w-h(inherit, 100%);
+    text-align: center;
+    margin-bottom: $baseSpacing;
+  }
+  @media only screen and (min-width: $until-tablet) and (max-width: $tablet-portrait){
+    @include w-h(inherit, 20vh);
+    justify-content: flex-start;
+    text-align: center;
+    margin-bottom: $baseSpacing;
+
+    h2 {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+  @media only screen and (min-width: 1024px) {
+    justify-content: flex-start;
+  }
+
+  .options {
+    @include flex-column();
+    justify-content: space-between;
+
+    @media only screen and (min-width: $until-tablet) and (max-width: $tablet-portrait) {
+      flex-flow: row nowrap;
+      justify-content: space-around;
+    }
+
+    &__selector {
+      @include w-h(100%);
+      margin: $baseSpacing auto 30px;
+      @media only screen and (max-width: $until-tablet) {
+        margin: 5px auto;
+        flex-direction: row;
+      }
+      @media only screen and (min-width: $tablet-portrait) {
+        @include flex-column();
+      }
+      select {
+        @include w-h(auto, 25px);
+        margin-left: 5px;
+
+      }
+    }
+  }
+
+  button {
+    @include button($lightgreen, $darkgreen, $orange);
+    height: 50px;
+
+    a {
+      text-decoration: none;
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 18px;
+      color: $white;
+    }
+
+    @media only screen and (max-width: $tablet-portrait) {
+      margin-top: $baseSpacing;
+    }
+  }
+}

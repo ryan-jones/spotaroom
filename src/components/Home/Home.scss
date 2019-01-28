@@ -1,0 +1,20 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.home {
+  @include w-h(100%, 85vh);
+  padding: $baseSpacing 0;
+  background-color: $lightgrey;
+
+  &__widgets {
+    @include flex-around();
+    height: 75vh;
+    padding: 0 $baseSpacing;
+
+    @media only screen and (max-width: $tablet-portrait) {
+      flex-direction: column;
+      height: auto;
+      overflow: scroll;
+    }
+  }
+}

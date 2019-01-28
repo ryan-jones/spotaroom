@@ -1,0 +1,52 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.header {
+  @include flex-between();
+  @include w-h(100%, 15vh);
+  border-bottom: 1px solid #ddd;
+  font-family: 'Luckiest Guy', cursive;
+  background-color: $white;
+
+  .logo {
+    @include flex-center();
+    align-items: center;
+    width: 40%;
+    margin: $baseSpacing;
+
+    @media only screen and (max-width: 566px) {
+      width: 100%;
+    }
+    a {
+      @include w-h(100%);
+    }
+
+    img {
+      @include w-h(100%);
+    }
+  }
+
+  .navbar {
+    @include flex-end();
+    align-items: flex-end;
+    width: 60%;
+    margin: $baseSpacing;
+    font-size: 22px;
+
+    @media only screen and (max-width: 566px) {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: $fadedblack;
+      margin: 0 $baseSpacing;
+      &:hover {
+        color: $lightgreen;
+      }
+    }
+    &:not(a) {
+      margin: 0 $baseSpacing;
+    }
+  }
+}

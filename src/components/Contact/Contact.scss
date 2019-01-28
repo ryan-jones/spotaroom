@@ -1,0 +1,26 @@
+@import '../../styles/mixins.scss';
+.contact {
+  @include w-h(100%);
+  @include flex-center();
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: $baseSpacing;
+
+  h1 {
+    font-size: 72px;
+  }
+
+  &__info {
+    padding: $baseSpacing;
+    @include flex-between();
+
+    div {
+      margin: 0 2 * $baseSpacing;
+
+      h2 {
+        font-size: 56px;
+      }
+    }
+  }
+}

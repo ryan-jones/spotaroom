@@ -1,0 +1,120 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.showcase {
+  @include w-h(70%, 100%);
+  background-color: $white;
+  border-radius: 5px;
+  padding: $baseSpacing;
+  overflow: scroll;
+
+  @media only screen and (max-width: $tablet-portrait) {
+    @include w-h(inherit, 70vh);
+  }
+
+  .property {
+    @include flex-between();
+    margin: $baseSpacing;
+    padding: $baseSpacing;
+    background-color: $yellow;
+
+    @media only screen and (max-width: $until-tablet) {
+      @include flex-column();
+      margin: $baseSpacing 0;
+    }
+
+    &__image {
+      @include w-h(150px);
+      position: relative;
+      box-sizing: border-box;
+      @media only screen and (max-width: $until-tablet) {
+        @include w-h(inherit, 150px);
+      }
+
+      img {
+        @include w-h(100%);
+      }
+      
+    }
+    .overlay {
+      @include w-h(100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: transparent;
+
+      &:hover {
+        background: $lightgrey-overlay;
+        box-shadow: 10px 5px 10px rgba(0,0,0, 0.6);
+      }
+    }
+
+    &__description {
+      width: 40%;
+      font-size: 22px;
+      font-weight: bold;
+
+      @media only screen and (max-width: $until-tablet) {
+        width: inherit;
+      }
+    }
+    &__actions {
+      @include flex-between();
+      width: 30%;
+      flex-direction: column;
+      align-items: center;
+
+      @media only screen and (max-width: $until-tablet) {
+        width: inherit;
+      }
+
+
+      .price {
+        @include w-h(75px, auto);
+        @include flex-center();
+        margin-top: $baseSpacing;
+        border-radius: 10px;
+        background-color: $fadedblack;
+        color: $yellow;
+
+        @media only screen and (max-width: $until-tablet) {
+          @include w-h(100%, auto);
+        }
+
+        p {
+          margin: 10px auto 5px;
+          font-family: 'Luckiest Guy', cursive;
+        }
+      }
+
+      .buttons {
+        @include flex-between();
+        width: 100%;
+
+        @media only screen and (min-width: $until-tablet) and (max-width: $large-desktop) {
+          @include flex-column();
+        }
+
+        button {
+          height: 30px;
+          font-size: 12px;
+
+          @media only screen and (max-width: $until-tablet) {
+            width: auto;
+          }
+
+          @media only screen and (max-width: $large-desktop) {
+            margin: 5px 0;
+          }
+
+          &.details {
+            @include button($lightgreen, $darkgreen, $orange);
+          }
+          &.book {
+            @include button($lightgreen, $darkgreen, $orange);
+          }
+        }
+      }
+    }
+  }
+}

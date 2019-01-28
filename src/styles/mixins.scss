@@ -1,0 +1,68 @@
+@import './variables.scss';
+
+@mixin flex($value) {
+  display: flex;
+  justify-content: $value;
+}
+
+@mixin flex-center() {
+  @include flex(center);
+}
+
+@mixin flex-between() {
+  @include flex(space-between);
+}
+
+@mixin flex-around() {
+  @include flex(space-around);
+}
+
+@mixin flex-start(){
+  @include flex(flex-start);
+}
+
+@mixin flex-end() {
+  @include flex(flex-end);
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin w-h($width, $height: null) {
+  width: $width;
+
+  @if ($height) {
+    height: $height;
+  } @else {
+    height: $width;
+  }
+}
+
+@mixin position($position, $index: 0) {
+  position: $position;
+  z-index: $index;
+}
+
+@mixin top-left($top, $left: null) {
+  top: $top;
+  @if ($left) {
+    left: $left;
+  } @else {
+    left: $top;
+  }
+}
+
+@mixin button($background, $border, $hover) {
+  font-family: 'Luckiest Guy', cursive;
+  color: $white;
+  padding: $baseSpacing;
+  background-color: $background;
+  border-bottom: 5px solid $border;
+
+  &:hover {
+    background-color: $hover;
+    border-bottom: 5px solid darken($hover, 10%);
+  }
+}

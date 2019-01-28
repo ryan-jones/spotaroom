@@ -1,0 +1,11 @@
+@import '../../styles/mixins.scss';
+
+.how {
+  @include w-h(100%, 85vh);
+  @include flex-center();
+  align-items: center;
+  text-align: center;
+  h1 {
+    font-size: 72px;
+  }
+}
