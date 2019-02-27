@@ -14,4 +14,5 @@ export interface IPropertyProps {
   results: IProperty[];
   loading: boolean;
   sortedBy: string;
+  totalNumberOfListings: number;
 }

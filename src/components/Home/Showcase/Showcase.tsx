@@ -14,8 +14,13 @@ const showcase = ({ properties }: IProps) => {
       <section className="showcase">
         {properties.loading 
           ? (<p>Loading...</p>) 
-          : propertyListings.map((property: IProperty, index) => (
-            <Property key={`${property.adId}-${index}`} property={property} />)
+          : (
+            <React.Fragment>
+              <h2>{properties.totalNumberOfListings} properties located in Madrid</h2>
+             { propertyListings.map((property: IProperty, index) => (
+               <Property key={`${property.adId}-${index}`} property={property} />))
+             }
+            </React.Fragment>
           )
         }
       </section>
