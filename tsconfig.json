@@ -17,7 +17,14 @@
     "importHelpers": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "paths": {
+      "components/*": ["src/components/*"],
+      "assets/*": ["src/assets/*"],
+      "store/*": ["src/store/*"],
+      "interfaces/*": ["src/interfaces/*"],
+      "utils/*": ["src/utils/*"]
+    }
   },
   "exclude": [
     "node_modules",
